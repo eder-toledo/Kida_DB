@@ -1,0 +1,35 @@
+CREATE TABLE choice(
+idSurvey DOUBLE NOT NULL,
+idChoice DOUBLE NOT NULL,
+name VARCHAR(50) NOT NULL,
+caption VARCHAR(50) NOT NULL,
+media VARCHAR(50) NOT NULL,
+PRIMARY KEY (idChoice),
+FOREIGN KEY (idForm) REFERENCES survey(idSurvey)
+)
+
+
+CREATE TABLE mainTableName(
+idForm DOUBLE NOT NULL,
+uuid VARCHAR(50) NOT NULL,
+createdAt VARCHAR(50) NOT NULL,
+editedAt VARCHAR(50) NOT NULL,
+description VARCHAR(50) NOT NULL,
+deleted VARCHAR(50) NOT NULL,
+PRIMARY KEY (idForm))
+
+
+CREATE TABLE survey(
+idForm DOUBLE NOT NULL,
+idSurvey DOUBLE NOT NULL,
+type VARCHAR(50) NOT NULL,
+name VARCHAR(50) NOT NULL,
+caption VARCHAR(50) NOT NULL,
+hint VARCHAR(50) NOT NULL,
+default VARCHAR(50) NOT NULL,
+required VARCHAR(50) NOT NULL,
+relevance VARCHAR(50) NOT NULL,
+filter VARCHAR(50) NOT NULL,
+PRIMARY KEY (idSurvey),
+FOREIGN KEY (idForm) REFERENCES mainTableName(idForm)
+)
