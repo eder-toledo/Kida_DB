@@ -123,7 +123,7 @@ CREATE TABLE choice
 
 CREATE TABLE response_choice
 (
- idResponseChoice  NOT NULL ,
+ idResponseChoice INT NOT NULL ,
  idResponse       INT NOT NULL ,
  idChoice         INT NOT NULL ,
  value            JSON NOT NULL ,
